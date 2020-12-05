@@ -82,7 +82,7 @@ You can give me the following commands:
             responded = True
         elif incoming_msg == 'get recipe':
             # get the last run details
-            r = requests.get('https://api.apify.com/v2/actor-tasks/o7PTf4BDcHhQbG7a2/runs/last?token=qTt3H59g5qoWzesLWXeBKhsXu')
+            r = requests.get('https://api.apify.com/v2/actor-tasks/o7PTf4BDcHhQbG7a2/runs/last?token=jMi2xYyMJPyNYpdFQ6CNEvfBi')
             
             if r.status_code == 200:
                 data = r.json()
@@ -95,7 +95,7 @@ You can give me the following commands:
                 elif data['data']['status'] == "SUCCEEDED":
 
                     # get the last run dataset items
-                    r = requests.get('https://api.apify.com/v2/actor-tasks/o7PTf4BDcHhQbG7a2/runs/last/dataset/items?token=qTt3H59g5qoWzesLWXeBKhsXu')
+                    r = requests.get('https://api.apify.com/v2/actor-tasks/o7PTf4BDcHhQbG7a2/runs/last/dataset/items?token=jMi2xYyMJPyNYpdFQ6CNEvfBi')
                     data = r.json()
 
                     if data:
@@ -134,7 +134,7 @@ Recipe: {}
             responded = True
 
         elif incoming_msg == 'news':
-            r = requests.get('https://newsapi.org/v2/top-headlines?sources=bbc-news,the-washington-post,the-wall-street-journal,cnn,fox-news,cnbc,abc-news,business-insider-uk,google-news-uk,independent&apiKey=3ff5909978da49b68997fd2a1e21fae8')
+            r = requests.get('http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-05&sortBy=publishedAt&apiKey=d8f963666e244dbe92c71182d298afe4')
             
             if r.status_code == 200:
                 data = r.json()
